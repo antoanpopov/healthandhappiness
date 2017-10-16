@@ -191,8 +191,7 @@ make up @meylo0 , model @annelise.journal , hair @hikageyumiko , digital effects
 
                             <div class="instagram-button">
 
-                                <a href="https://www.instagram.com/martabevacqua" target="_blank" class="follow-us">Follow
-                                    Us</a>
+                                <a href="https://www.instagram.com/martabevacqua" target="_blank" class="follow-us">Последвайте ни</a>
 
                             </div>
 
