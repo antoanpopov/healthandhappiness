@@ -5,6 +5,7 @@ namespace Modules\Core\Providers;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Commands\SeedCommand;
 use Modules\Dashboard\Providers\DashboardServiceProvider;
+use Modules\Frontend\Providers\FrontendServiceProvider;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -33,7 +34,8 @@ class CoreServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->app->register(DashboardServiceProvider::class);
+//        $this->app->register(DashboardServiceProvider::class);
+        $this->app->register(FrontendServiceProvider::class);
     }
 
     /**

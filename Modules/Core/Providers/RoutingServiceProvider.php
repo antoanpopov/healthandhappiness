@@ -63,6 +63,9 @@ abstract class RoutingServiceProvider extends ServiceProvider
         $frontend = $this->getFrontendRoute();
         if ($frontend && file_exists($frontend)) {
             $router->group([
+                'namespace' => 'Frontend',
+                'prefix' => '',
+                'as' => 'frontend.',
                 'middleware' => [],
             ], function (Router $router) use ($frontend) {
                 require $frontend;
