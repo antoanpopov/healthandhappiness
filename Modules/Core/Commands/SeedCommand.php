@@ -40,7 +40,7 @@ class SeedCommand extends Command{
                 $name = Str::studly($name);
                 $this->moduleSeed($name);
             } else {
-                $modules = $this->getModuleRepository()->getOrdered();
+                $modules = ['Core', 'Frontend'];
                 array_walk($modules, [$this, 'moduleSeed']);
                 $this->info('All modules seeded.');
             }
@@ -137,6 +137,6 @@ class SeedCommand extends Command{
      */
     public function getModuleName()
     {
-        return 'Dashboard';
+        return 'Core';
     }
 }

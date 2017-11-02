@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'view' => 'dashboard.layouts._breadcrumbs',
+//    'view' => 'dashboard.layouts._breadcrumbs',
 
     /*
     |--------------------------------------------------------------------------

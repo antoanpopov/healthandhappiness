@@ -9,11 +9,11 @@ namespace Modules\Frontend\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class ActivitiesController extends Controller
 {
 
     public function index()
     {
-        return view('frontend::pages.home.index');
+        return view('frontend::pages.activities.index');
     }
 }

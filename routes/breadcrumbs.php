@@ -78,3 +78,12 @@ Breadcrumbs::register('admin.cat-tools.edit', function ($breadcrumbs, $entity) {
     $breadcrumbs->parent('admin.editors.index');
     $breadcrumbs->push(trans("dashboard::pages.editors.edit",['entity' => $entity]), route('admin.editors.create'),[]);
 });
+
+
+\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::register('frontend.home.index',function ($breadcrumbs){
+    $breadcrumbs->push(trans("frontend::pages.home.index"), route('frontend.home.index'));
+});
+\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::register('frontend.publications.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('frontend.home.index');
+    $breadcrumbs->push(trans("frontend::pages.publications.index"), route('frontend.publications.index'),[]);
+});

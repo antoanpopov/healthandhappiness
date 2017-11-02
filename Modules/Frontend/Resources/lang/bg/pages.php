@@ -6,10 +6,22 @@
  * Time: 17:45
  */
 return [
-    'home' => 'Начало',
-    'about-me' => 'За мен',
-    'activities' => 'Дейности',
-    'contacts' => 'Контакти',
-    'consultations' => 'Консултации',
-    'publications' => 'Публикации',
+    'home' => [
+        'index' => 'Начало'
+    ],
+    'activities' => [
+        'index' => 'Дейности'
+    ],
+    'contact-me' => [
+        'index' => 'Контакти'
+    ],
+    'consultations' => [
+        'index' => 'Консултации'
+    ],
+    'publications' => [
+        'index' => 'Публикации'
+    ],
+    'about-me' => [
+        'index' => 'За мен'
+    ],
 ];

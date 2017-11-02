@@ -16,6 +16,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->make(\Illuminate\Database\Eloquent\Factory::class)->load(__DIR__ . '/../Database/Factories');
     }
 
     public function boot()

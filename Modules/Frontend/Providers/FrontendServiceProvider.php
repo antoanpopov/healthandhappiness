@@ -2,9 +2,8 @@
 
 namespace Modules\Frontend\Providers;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
-use Modules\Core\Composers\SidebarViewCreator;
-use Modules\Core\Commands;
 
 class FrontendServiceProvider extends ServiceProvider
 {
@@ -15,6 +14,7 @@ class FrontendServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->make(\Illuminate\Database\Eloquent\Factory::class)->load(__DIR__ . '/../Database/Factories');
     }
 
     public function boot()
@@ -25,6 +25,8 @@ class FrontendServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'frontend');
 
         $this->app->register(RouteServiceProvider::class);
+        Config::set('breadcrumbs.view','frontend::partials._breadcrumbs');
+
     }
 
     /**

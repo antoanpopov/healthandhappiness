@@ -11,10 +11,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/slick.css') }}" rel="stylesheet" />
-    {{--<link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet" />--}}
-    <!-- Scripts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/slick.css') }}" rel="stylesheet"/>
+{{--<link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet" />--}}
+<!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -24,14 +25,16 @@
 <body>
 <div>
     <!-- START OF HEADER -->
-    @include('frontend::partials._header')
+@include('frontend::partials._header')
 <!-- END OF HEADER -->
+    @if(\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::exists(Route::currentRouteName()))
+        @yield('breadcrumbs',Breadcrumbs::render(Route::currentRouteName()))
+    @endif
     @yield('content')
     @include('frontend::partials._footer')
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/slick.min.js') }}"></script>
 @stack('scripts')
