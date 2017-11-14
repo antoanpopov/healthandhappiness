@@ -9,6 +9,7 @@
 namespace Modules\Core\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CoreUsersTableSeeder extends Seeder
 {
@@ -19,7 +20,10 @@ class CoreUsersTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         \App\User::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         factory(\App\User::class)->create([
             'id' => 1,
             'name' => 'Antoan Popov',

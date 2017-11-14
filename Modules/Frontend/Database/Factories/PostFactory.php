@@ -16,6 +16,9 @@ $factory->define(\Modules\Frontend\Entities\Post::class, function (Faker $faker)
         'created_by' => 1,
         'title:bg' => $faker->text(190),
         'abstract:bg' => $faker->text(150),
-        'content:bg' => $faker->text(3000)
+        'content:bg' => $faker->text(3000),
+        'title:en' => $faker->text(190),
+        'abstract:en' => $faker->text(150),
+        'content:en' => $faker->text(3000),
     ];
 });

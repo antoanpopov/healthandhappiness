@@ -1,0 +1,1 @@
+{{ trans('frontend::messages.no results for this search') }}

@@ -20,7 +20,10 @@ class FrontendCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        \Modules\Frontend\Entities\CategoryTranslation::truncate();
         \Modules\Frontend\Entities\Category::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         factory(\Modules\Frontend\Entities\Category::class)->create([
             'title:bg' => 'Позитивна психология',

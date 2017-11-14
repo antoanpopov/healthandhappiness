@@ -8,16 +8,25 @@
 namespace Modules\Frontend\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Modules\Frontend\Entities\Category;
 use Modules\Frontend\Entities\Post;
+use Spatie\Tags\Tag;
 
 class PublicationsController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $publications = Post::published()->translatedIn(App::getLocale())->get();
-        $post = factory(Post::class)->create();
+        $publications = Post::published()
+            ->with('tags')
+            ->with('categories')
+            ->translatedIn(App::getLocale())
+            ->searchByKeyword($request->search)
+            ->searchByCategory($request->category)
+            ->searchByTag($request->tag)
+            ->paginate();
 
         return view('frontend::pages.publications.index',['publications'=> $publications]);
     }

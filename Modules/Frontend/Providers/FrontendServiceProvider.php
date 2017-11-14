@@ -3,7 +3,9 @@
 namespace Modules\Frontend\Providers;
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Modules\Frontend\Composers;
 
 class FrontendServiceProvider extends ServiceProvider
 {
@@ -26,6 +28,9 @@ class FrontendServiceProvider extends ServiceProvider
 
         $this->app->register(RouteServiceProvider::class);
         Config::set('breadcrumbs.view','frontend::partials._breadcrumbs');
+        View::composer('frontend::widgets.tags', Composers\PostsTagsViewComposer::class);
+        View::composer('frontend::widgets.categories', Composers\PostsCategoriesViewComposer::class);
+        View::composer('frontend::widgets.categories', Composers\PostsSearchViewComposer::class);
 
     }
 

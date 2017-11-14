@@ -7,5 +7,6 @@
  */
 return [
     'sign up' => 'запиши ме',
-    'read more' => 'read more',
+    'read more' => 'прочети още',
+    'search' => 'Търси',
 ];
