@@ -21,6 +21,9 @@ return [
     'publications' => [
         'index' => 'Публикации'
     ],
+    'events' => [
+        'index' => 'Събития'
+    ],
     'about-me' => [
         'index' => 'За мен'
     ],

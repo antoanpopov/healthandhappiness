@@ -1,11 +1,13 @@
-<aside class="">
-    <h2>{{ trans('frontend::labels.learn more about') }}:</h2>
-    <div class="row">
+<div class="widget widget_tag_cloud">
+    <h3 class="widget-title">{{ trans('frontend::labels.learn more about') }}</h3>
+    <ul>
         @foreach($tags as $tag)
-            <a href="{{ route('frontend.publications.index',['category'=> request('category'),'tag'=>$tag->slug]) }}"
-               title="{{ $tag->name }}">
-                <span class="tag-theme">{{ $tag->name }}</span>
-            </a>
+            <li>
+                <a href="{{ route($route,['category'=> request('category'),'tag'=>$tag->slug]) }}"
+                   title="{{ $tag->name }}">
+                    {{ $tag->name }}
+                </a>
+            </li>
         @endforeach
-    </div>
-</aside>
+    </ul>
+</div>

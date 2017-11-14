@@ -34,10 +34,6 @@ class FrontendCategoriesTableSeeder extends Seeder
             'title:en' => 'Natural hygiene and health',
         ]);
         factory(\Modules\Frontend\Entities\Category::class)->create([
-            'title:bg' => 'Природна хигиена и здраве',
-            'title:en' => 'Natural hygiene and health',
-        ]);
-        factory(\Modules\Frontend\Entities\Category::class)->create([
             'title:bg' => 'Здравословен начин на живот',
             'title:en' => 'Healthy lifestyle',
         ]);

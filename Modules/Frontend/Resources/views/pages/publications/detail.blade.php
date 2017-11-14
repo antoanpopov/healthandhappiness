@@ -8,8 +8,11 @@
                 {{ $post->cover_image_id }}
             </div>
             <div class="col-xs-12 col-md-3">
-                @include('frontend::widgets.categories')
-                @include('frontend::widgets.tags')
+                <div class="sidebar">
+                    @include('frontend::widgets.search',['route'=>'frontend.publications.index'])
+                    @include('frontend::widgets.categories',['route'=>'frontend.publications.index'])
+                    @include('frontend::widgets.tags',['route'=>'frontend.publications.index'])
+                </div>
             </div>
         </div>
     </div>

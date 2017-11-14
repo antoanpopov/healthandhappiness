@@ -8,9 +8,9 @@
             </div>
             <div class="col-xs-12 col-md-3">
                 <div class="sidebar">
-                    @include('frontend::widgets.search')
-                    @include('frontend::widgets.categories')
-                    @include('frontend::widgets.tags')
+                    @include('frontend::widgets.search',['route'=>'frontend.publications.index'])
+                    @include('frontend::widgets.categories',['route'=>'frontend.publications.index'])
+                    @include('frontend::widgets.tags',['route'=>'frontend.publications.index'])
                 </div>
             </div>
         </div>

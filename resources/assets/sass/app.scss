@@ -10,10 +10,17 @@
 @import "header";
 @import "footer";
 @import "blog";
+@import "sidebar";
 
 .label, .badge, input, button {
   border-radius: 0 !important;
   outline: 0;
+}
+input, textarea{
+  &:focus{
+    outline: none;
+    border-color: $theme-color-accent !important;
+  }
 }
 *{
  font-family: 'Roboto';

@@ -64,25 +64,17 @@
             <aside class="footer-widget widget-categories col-xs-12 col-md-3">
                 <h2 class="widget-title">{{ trans('frontend::labels.categories') }}</h2>
                 <nav>
+
                     <ul>
-                        <li>
-                            <a href="http://hellen.withemes.com/category/fashion/">{{ trans('frontend::categories.positive-psychology') }}</a>
-                        </li>
-                        <li>
-                            <a href="http://hellen.withemes.com/category/lifestyle/">{{ trans('frontend::categories.natural-hygiene-and-health') }}</a>
-                        </li>
-                        <li>
-                            <a href="http://hellen.withemes.com/category/model/">{{ trans('frontend::categories.healthy-way-of-living') }}</a>
-                        </li>
-                        <li>
-                            <a href="http://hellen.withemes.com/category/travel/">{{ trans('frontend::categories.art-of-eating-healthy') }}</a>
-                        </li>
-                        <li>
-                            <a href="http://hellen.withemes.com/category/video/">{{ trans('frontend::categories.crystal-reiki') }}</a>
-                        </li>
-                        <li>
-                            <a href="http://hellen.withemes.com/category/video/">{{ trans('frontend::categories.relax') }}</a>
-                        </li>
+                        @foreach($data['categories'] as $category)
+                            <li>
+                                <a href="{{ route('frontend.publications.index',['category'=>$category->slug]) }}"
+                                   title="{{ $category->title }}"
+                                   @if(request()->fullUrl() == route('frontend.publications.index',['category'=>$category->slug]))class="active"@endif>
+                                    {{ $category->title }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </nav>
             </aside><!-- #secondary -->

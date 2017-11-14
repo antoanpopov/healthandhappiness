@@ -87,3 +87,8 @@ Breadcrumbs::register('admin.cat-tools.edit', function ($breadcrumbs, $entity) {
     $breadcrumbs->parent('frontend.home.index');
     $breadcrumbs->push(trans("frontend::pages.publications.index"), route('frontend.publications.index'),[]);
 });
+
+\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::register('frontend.events.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('frontend.home.index');
+    $breadcrumbs->push(trans("frontend::pages.events.index"), route('frontend.events.index'),[]);
+});

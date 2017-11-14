@@ -20,5 +20,6 @@ class FrontendDatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(FrontendCategoriesTableSeeder::class);
+        $this->call(FrontendEventsTableSeeder::class);
     }
 }

@@ -28,6 +28,7 @@ class FrontendServiceProvider extends ServiceProvider
 
         $this->app->register(RouteServiceProvider::class);
         Config::set('breadcrumbs.view','frontend::partials._breadcrumbs');
+        View::composer('frontend::partials._footer', Composers\FooterViewComposer::class);
         View::composer('frontend::widgets.tags', Composers\PostsTagsViewComposer::class);
         View::composer('frontend::widgets.categories', Composers\PostsCategoriesViewComposer::class);
         View::composer('frontend::widgets.categories', Composers\PostsSearchViewComposer::class);
