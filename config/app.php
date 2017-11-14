@@ -174,6 +174,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -238,6 +239,7 @@ return [
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
         'Menu'      => Lavary\Menu\Facade::class,
+        'Date' => Jenssegers\Date\Date::class,
 
     ],
 

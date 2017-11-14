@@ -29,7 +29,8 @@ class CreateFrontendEventsTable extends Migration
             $table->foreign('deleted_by')->references('id')->on('users')->after('id')->onUpdate('cascade')->onDelete('set null');
 
             //dates
-            $table->dateTime('held_at');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->timestamps();
             $table->softDeletes();
         });

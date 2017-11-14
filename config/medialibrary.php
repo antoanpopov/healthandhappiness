@@ -6,13 +6,13 @@ return [
      * The filesystems on which to store added files and derived images by default. Choose
      * one or more of the filesystems you configured in app/config/filesystems.php
      */
-    'default_filesystem' => 'public',
+    'default_filesystem' => 'media',
 
     /*
      * The maximum file size of an item in bytes. Adding a file
      * that is larger will result in an exception.
      */
-    'max_file_size' => 1024 * 1024 * 10,
+    'max_file_size' => 1024 * 1024 * 100,
 
     /*
      * This queue will be used to generate derived images.

@@ -30,6 +30,7 @@
     @if(\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::exists(Route::currentRouteName()))
         @yield('breadcrumbs',Breadcrumbs::render(Route::currentRouteName()))
     @endif
+    {{ Date::setLocale(App::getLocale()) }}
     @yield('content')
     @include('frontend::partials._footer')
 </div>

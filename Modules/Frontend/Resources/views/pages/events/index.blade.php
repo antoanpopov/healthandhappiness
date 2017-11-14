@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-9">
                 @include('frontend::widgets.search-filters')
-                @each('frontend::pages.events.list-item',$events,'publication','frontend::search.no-results')
+                @each('frontend::pages.events.list-item',$events,'event','frontend::search.no-results')
             </div>
             <div class="col-xs-12 col-md-3">
                 <div class="sidebar">
